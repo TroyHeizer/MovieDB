@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\troyh\\source\\repos\\MovieDB\\MovieDB.csproj": {}
+    "C:\\Users\\troyh\\Source\\Repos\\TroyHeizer\\MovieDB\\MovieDB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\troyh\\source\\repos\\MovieDB\\MovieDB.csproj": {
+    "C:\\Users\\troyh\\Source\\Repos\\TroyHeizer\\MovieDB\\MovieDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\troyh\\source\\repos\\MovieDB\\MovieDB.csproj",
+        "projectUniqueName": "C:\\Users\\troyh\\Source\\Repos\\TroyHeizer\\MovieDB\\MovieDB.csproj",
         "projectName": "MovieDB",
-        "projectPath": "C:\\Users\\troyh\\source\\repos\\MovieDB\\MovieDB.csproj",
+        "projectPath": "C:\\Users\\troyh\\Source\\Repos\\TroyHeizer\\MovieDB\\MovieDB.csproj",
         "packagesPath": "C:\\Users\\troyh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\troyh\\source\\repos\\MovieDB\\obj\\",
+        "outputPath": "C:\\Users\\troyh\\Source\\Repos\\TroyHeizer\\MovieDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\troyh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,24 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

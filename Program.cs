@@ -1,12 +1,15 @@
+using MovieDB.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using MovieDB.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = builder.Configuration.GetConnectionString("MovieDB");
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddDbContextFactory<MovieDataContext>(options => options.UseSqlite(connectionString));
 builder.Services.AddSingleton<WeatherForecastService>();
 
 var app = builder.Build();
