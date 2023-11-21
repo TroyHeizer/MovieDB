@@ -1,7 +1,106 @@
-﻿@page "/"
+﻿@using Microsoft.EntityFrameworkCore
+@using MovieDB.Data
+@page "/"
+@inject IDbContextFactory<MovieDataContext> MovieDataContextFactory;
 
-<MovieDataBase>Index</MovieDataBase>
-
-<h1>Welcome to Movie Data Base!</h1>
+<PageTitle>Welcome to the movie database!</PageTitle>
 
 
+@if (ShowCreate)
+{
+
+    <h3>Add a Movie</h3>
+    <div class="row">
+        <label for="MovieName" class="col-4 col-form-label">Movie Name</label>
+        <div class="col-8">
+            <input id="MovieName" name="MovieName" type="text" class="form-control" @bind="@NewMovie.MovieName">
+        </div>
+    </div>
+    <div class="row">
+        <label for="MovieGenre" class="col-4 col-form-label">Movie Genre</label>
+        <div class="col-8">
+            <input id="MovieGenre" name="MovieGenre" type="text" class="form-control" @bind="@NewMovie.MovieGenre">
+        </div>
+    </div>
+    <div class="row">
+        <label for="ReleaseDate" class="col-4 col-form-label">Release Date</label>
+        <div class="col-8">
+            <input id="ReleaseDate" name="ReleaseDate" type="text" class="form-control" @bind="@NewMovie.ReleaseDate">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary" @onclick="ShowCreateForm">Add a Movie</button>
+        </div>
+    </div>
+
+}
+else
+{
+    <div class="form-group row">
+        <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary" @onclick="ShowCreateForm">Add a Movie</button>
+        </div>
+    </div>
+
+    @if (@OurMovies is not null && @OurMovies.Count > 0)
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered table-light border-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Movie Name</th>
+                        <th scope="col">Movie Genre</th>
+                        <th scope="col">Release Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var movie in OurMovies)
+                    {
+                        @if (!@ShowEdit)
+                        {
+                            <tr>
+                                <th scope="row">@movie.Id</th>
+                                <td>@movie.MovieName</td>
+                                <td>@movie.MovieGenre</td>
+                                <td>@movie.ReleaseDate</td>
+                                <td><button name="submit" type="submit" class="btn btn-primary" @onclick="() => ShowEditForm(movie)">Edit</button></td>
+                                <td><button name="submit" type="submit" class="btn btn-primary" @onclick="() => DeleteMovie(movie)">Delete</button></td>
+                            </tr>
+                        }
+                        else
+                        {
+                            if (@MovieToUpdate is not null && @MovieToUpdate.Id == @movie.Id)
+                            {
+                                <tr>
+                                    <th scope="row">@movie.Id</th>
+                                    <td><input id="MovieName" name="MovieName" type="text" class="form-control" @bind="@MovieToUpdate.MovieName" /></td>
+                                    <td><input id="MovieGenre" name="MovieGenre" type="text" class="form-control" @bind="@MovieToUpdate.MovieGenre" /></td>
+                                    <td><input id="ReleaseDate" name="ReleaseDate" type="text" class="form-control" @bind="@MovieToUpdate.MovieName" /></td>
+                                    <td><button name="submit" type="submit" class="btn btn-primary" @onclick="@UpdateMovie">Save</button></td>
+                                    <td></td>
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <th scope="row">@movie.Id</th>
+                                    <td>@movie.MovieName</td>
+                                    <td>@movie.MovieGenre</td>
+                                    <td>@movie.ReleaseDate</td>
+                                    <td><button name="submit" type="submit" class="btn btn-primary" @onclick="() => ShowEditForm(movie)">Edit</button></td>
+                                    <td></td>
+                                </tr>
+                            }
+                        }
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    }
+}
+}
