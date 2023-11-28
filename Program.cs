@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("MovieDB");
 // Add services to the container.
@@ -13,6 +14,7 @@ builder.Services.AddDbContextFactory<MovieDataContext>(options => options.UseSql
 builder.Services.AddSingleton<WeatherForecastService>();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

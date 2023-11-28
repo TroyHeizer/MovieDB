@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.Threading;
 
 
-
 namespace MovieDB.Pages
 
 {
@@ -34,6 +33,7 @@ namespace MovieDB.Pages
             NewMovie = new Movie();
             ShowCreate = true;
         }
+
         //This Method adds a New Movie to the Database//
         public async Task CreateNewMovie()
         {
@@ -47,6 +47,7 @@ namespace MovieDB.Pages
             ShowCreate = false;
             await ShowMovies();
         }
+
         //This Method Shows the List of our Movies an example of Read//
 
         public async Task ShowMovies()
@@ -61,7 +62,8 @@ namespace MovieDB.Pages
 
         }
 
-        //This method allows us to update our oMvie an example of update//
+
+        //This method allows us to update our Movie an example of update//
         //------------------ Update! ----------------///
 
         public async Task ShowEditForm(Movie ourMovie)
@@ -88,6 +90,7 @@ namespace MovieDB.Pages
             }
             ShowEdit = false;
         }
+
 
         //This is our delete method//
         public async Task DeleteMovie(Movie ourMovie)
