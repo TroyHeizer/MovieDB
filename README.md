@@ -8,4 +8,8 @@ The application is a CRUD (Create, Read, Update, Delete) system developed in Bla
 
 To get started, simply clone this repository into Visual Studio, save your changes, and press the play button. This should enable you to access and explore the project effortlessly.
 
+Visual Studio can be found at : https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&passive=false&cid=2030
+
+NOTE this application will run in web browser. Microsoft Edge seems to preform best.
+
 If you have any inquiries or suggestions, please do not hesitate to reach out. Your feedback is highly valued and appreciated.
