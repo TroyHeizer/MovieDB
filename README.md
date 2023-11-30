@@ -6,6 +6,13 @@ As an avid movie enthusiast, I endeavored to create a comprehensive tool to meti
 
 The application is a CRUD (Create, Read, Update, Delete) system developed in Blazor, utilizing Entity Framework Core and SQLite for seamless functionality and efficient data management.
 
+For the CodeKY capstone project I implemented the following features:
+
+1. Make a generic class
+2. Make an application API
+3. Make your application a crud api
+4. Make your application asynchronous
+
 To get started, simply clone this repository into Visual Studio, save your changes, and press the play button. This should enable you to access and explore the project effortlessly.
 
 Visual Studio can be found at : https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&passive=false&cid=2030
