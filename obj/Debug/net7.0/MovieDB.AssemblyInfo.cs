@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec231f29c139545267e282615a98b7c3f056b562")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
